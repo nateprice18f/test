@@ -1,0 +1,53 @@
+#Trim name
+=IFERROR(TRIM(RIGHT(L5,LEN(L5)-FIND(",",L5)-1)), "")
+#####
+#
+
+#Pulls template data
+=IF(ISNUMBER(MATCH(AD5, 'Email templates12'!$A$2:$A$100, 0)), INDEX('Email templates12'!$E$2:$H$100, MATCH(AD5, 'Email templates12'!$A$2:$A$100, 0), 0), "")
+#####
+#
+
+#select template
+=IF(
+  OR(L2 = "", M2 = ""), 'Email templates12'!$A$5, 
+  IF(OR(J2 = "", K2 = ""), 'Email templates12'!$A$5,
+  IF(OR(L2 = "", M2 = ""), 'Email templates12'!$A$5,
+IF(
+  AND(D5:D103 - TODAY() <= 21, D5:D103 > TODAY(), E5:E103 = "External hire", F5:F103 = "Onboarding", P5:P103 = "", Q5:Q103 = "", R5:R103 = "", 
+   S5:S103 = "", T5:T103 = ""), 'Email templates12'!$A$2,
+  IF(
+    AND(D5:D103 - TODAY() <= 21, D5:D103 > TODAY(), E5:E103 = "External hire", F5:F103 = "Onboarding", P5:P103 = "x", Q5:Q103 = "", R5:R103 = "", 
+   S5:S103 = "", T5:T103 = ""), 'Email templates12'!$A$8,
+    IF(
+      AND(D5:D103 - TODAY() <= 14, D5:D103 > TODAY(), E5:E103 = "External hire", F5:F103 = "Onboarding", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "", 
+   S5:S103 = "", T5:T103 = ""), 'Email templates12'!$A$10,
+      IF(
+        AND(D5:D103 - TODAY() <= 14, D5:D103 > TODAY(), E5:E103 = "External hire", F5:F103 = "Onboarding", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "x", 
+   S5:S103 = "", T5:T103 = ""), 'Email templates12'!$A$14,
+        IF(
+          AND(D5:D103 - TODAY() <= 7, D5:D103 > TODAY(), E5:E103 = "External hire", F5:F103 = "Onboarding", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "x", 
+   S5:S103 = "", T5:T103 = ""), 'Email templates12'!$A$12,
+          IF(
+            AND(D5:D103 - TODAY() <= 5, D5:D103 > TODAY(), E5:E103 = "External hire", F5:F103 = "Onboarding", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "x", 
+   S5:S103 = "x", T5:T103 = ""), 'Email templates'!$A$13,
+            IF(
+              AND(D5:D103 + TODAY() >= 30, D5:D103 < TODAY(), E5:E103 = "External hire", F5:F103 = "Start", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "x", 
+   S5:S103 = "x", T5:T103 = "x", U5:U103 = "", V5:V103 = "", W5:W103 = ""), 'Email templates'!$A$14,
+              IF(
+                AND(D5:D103 + TODAY() >= 60, D5:D103 < TODAY(), E5:E103 = "External hire", F5:F103 = "Start", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "x", 
+   S5:S103 = "x", T5:T103 = "x", U5:U103 = "x", V5:V103 = "", W5:W103 = ""), 'Email templates'!$A$15,
+                IF(
+                  AND(D5:D103 + TODAY() >= 90, D5:D103 < TODAY(), E5:E103 = "External hire", F5:F103 = "Start", P5:P103 = "x", Q5:Q103 = "x", R5:R103 = "x", 
+   S5:S103 = "x", T5:T103 = "x", U5:U103 = "x", V5:V103 = "x", W5:W103 = ""), 'Email templates'!$A$16,
+                  ""
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+)))))
+#####
+#
