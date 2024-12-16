@@ -1,0 +1,84 @@
+=
+{FILTER(
+  {Onboarding_Tracker13!A:A, Onboarding_Tracker13!B:B, Onboarding_Tracker13!C:C, 
+   Onboarding_Tracker13!AM:AM, Onboarding_Tracker13!G:G, Onboarding_Tracker13!D:D, 
+   Onboarding_Tracker13!E:E, Onboarding_Tracker13!AO:AO, Onboarding_Tracker13!AZ:AZ, 
+   Onboarding_Tracker13!BC:BC, Onboarding_Tracker13!BE:BE, Onboarding_Tracker13!BF:BF, 
+   Onboarding_Tracker13!AG:AG, Onboarding_Tracker13!AG:AG, Onboarding_Tracker13!BV:BV, 
+   Onboarding_Tracker13!BW:BW, Onboarding_Tracker13!BX:BX, Onboarding_Tracker13!BY:BY, 
+   Onboarding_Tracker13!BZ:BZ,  Onboarding_Tracker13!CA:CA, Onboarding_Tracker13!CB:CB,  
+   Onboarding_Tracker13!CC:CC,  Onboarding_Tracker13!CD:CD},
+  (Onboarding_Tracker13!G:G - TODAY() <= 21) * 
+  (Onboarding_Tracker13!G:G > TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "") * 
+  (Onboarding_Tracker13!BW:BW = "") * 
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Onboarding") 
+  +
+  (Onboarding_Tracker13!G:G - TODAY() <= 21) * 
+  (Onboarding_Tracker13!G:G > TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "") * 
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Onboarding") 
+  +
+  (Onboarding_Tracker13!G:G - TODAY() <= 14) * 
+  (Onboarding_Tracker13!G:G > TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "x") *
+  (Onboarding_Tracker13!BX:BX = "") *
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Onboarding") 
+  +
+  (Onboarding_Tracker13!G:G- TODAY() <= 7) * 
+  (Onboarding_Tracker13!G:G > TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "x") *
+  (Onboarding_Tracker13!BX:BX = "x") *
+  (Onboarding_Tracker13!BY:BY = "") *
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Onboarding") 
+  +
+  (Onboarding_Tracker13!G:G - TODAY() <= 5) * 
+  (Onboarding_Tracker13!G:G > TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "x") *
+  (Onboarding_Tracker13!BX:BX = "x") *
+  (Onboarding_Tracker13!BY:BY = "x") *
+  (Onboarding_Tracker13!BZ:BZ = "") *
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Onboarding") 
+  +
+  (Onboarding_Tracker13!G:G + TODAY() >= 30) * 
+  (Onboarding_Tracker13!G:G < TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "x") *
+  (Onboarding_Tracker13!BX:BX = "x") *
+  (Onboarding_Tracker13!BY:BY = "x") *
+  (Onboarding_Tracker13!BZ:BZ = "x") *
+  (Onboarding_Tracker13!CA:CA = "") *
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E= "Start")
+  +
+  (Onboarding_Tracker13!G:G + TODAY() >= 60) * 
+  (Onboarding_Tracker13!G:G < TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "x") *
+  (Onboarding_Tracker13!BX:BX = "x") *
+  (Onboarding_Tracker13!BY:BY = "x") *
+  (Onboarding_Tracker13!BZ:BZ = "x") *
+  (Onboarding_Tracker13!CA:CA = "") *
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Start")
+  +
+  (Onboarding_Tracker13!G:G + TODAY() >= 90) * 
+  (Onboarding_Tracker13!G:G < TODAY()) * 
+  (Onboarding_Tracker13!BV:BV = "x") * 
+  (Onboarding_Tracker13!BW:BW = "x") *
+  (Onboarding_Tracker13!BX:BX = "x") *
+  (Onboarding_Tracker13!BY:BY = "x") *
+  (Onboarding_Tracker13!BZ:BZ = "x") *
+  (Onboarding_Tracker13!CA:CA = "") *
+  (Onboarding_Tracker13!D:D = "External hire") * 
+  (Onboarding_Tracker13!E:E = "Start")
+)}
